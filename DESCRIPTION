@@ -12,4 +12,8 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Imports: 
     dplyr,
-    magrittr
+    magrittr,
+    readr
+Depends: 
+    R (>= 2.10)
+LazyData: true

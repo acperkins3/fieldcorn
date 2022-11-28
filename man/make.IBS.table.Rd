@@ -2,9 +2,16 @@
 % Please edit documentation in R/calcIBS.R
 \name{make.IBS.table}
 \alias{make.IBS.table}
-\title{Make IBS Table}
+\title{Calculate identity by state (IBS) between two or more lines in bins across the genome}
 \usage{
-make.IBS.table(Hapmap, ReferenceLine, OtherGenotypes, BinSize)
+make.IBS.table(
+  Hapmap,
+  ReferenceLine,
+  OtherLines,
+  BinSize,
+  MinBinSize = 10,
+  Chromosomes
+)
 }
 \arguments{
 \item{Hapmap}{\itemize{
@@ -15,15 +22,25 @@ make.IBS.table(Hapmap, ReferenceLine, OtherGenotypes, BinSize)
 \item The line to which IBS in the others will be compared
 }}
 
-\item{OtherGenotypes}{\itemize{
-\item The line or lines that will be used for comparisons
+\item{OtherLines}{\itemize{
+\item The line or lines that will be used for comparisons. If not specified, all other genotypes will be used
 }}
 
-\item{BinSize}{}
+\item{BinSize}{\itemize{
+\item the number of SNPs per bin
+}}
+
+\item{MinBinSize}{\itemize{
+\item At the ends of chromosomes or when there are many missing values, bins may be smaller than the number specified by \code{BinSize}. This number controls how small bins can be before NA is returned. (2 SNPs is probably not enough to give a good estimate of IBS, for example.)
+}}
+
+\item{Chromosomes}{\itemize{
+\item A vector of which chromosomes should be used for the calculations. All are used by default
+}}
 }
 \value{
 
 }
 \description{
-Make IBS Table
+Calculate identity by state (IBS) between two or more lines in bins across the genome
 }
