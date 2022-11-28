@@ -46,3 +46,21 @@ table1 %>%
 ```
 
 <p align="center"><img src="https://raw.githubusercontent.com/acperkins3/GDD-Plots-2022/main/ReadmeImages/IBSTableExample.png" /></p>
+
+There are other arguments that can be changed as well. For example, we could specify that the bins be 600 SNPs in length like this:
+
+```
+table1 <- make.IBS.table(ExampleHapmap1, 
+ReferenceLine = "PHN46", 
+OtherLines = c("PHP02", "PHJ89"),
+BinSize = 600)
+```
+
+or we could specity which chromosome(s) to do the calculation for like this
+
+```
+table1 <- make.IBS.table(ExampleHapmap1, 
+ReferenceLine = "PHN46", 
+OtherLines = c("PHP02", "PHJ89"),
+Chromosomes = c(1,2)
+```
