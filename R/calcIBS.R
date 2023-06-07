@@ -14,7 +14,7 @@ make.IBS.table <- function(Hapmap, ReferenceLine, OtherLines, BinSize, MinBinSiz
 
   if (missing(Chromosomes)) {Chromosomes <- unique(Hapmap$chrom)}
   if (missing(OtherLines)) {OtherLines <- names(Hapmap %>% dplyr::select(-(dplyr::all_of(1:11)), -(dplyr::all_of(ReferenceLine))))}
-  if (missing(BinSize)) {BinSize <- nrow(Hapmap) / length(Chromosomes) / 20}
+  if (missing(BinSize)) {BinSize <- (nrow(Hapmap) / length(Chromosomes) / 20) %/% 1}
 
   AllGenotypes <- append(ReferenceLine, OtherLines)
 
