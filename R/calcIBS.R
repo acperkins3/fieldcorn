@@ -52,14 +52,6 @@ make.IBS.table <- function(Hapmap, ReferenceLine, OtherLines, BinSize, MinBinSiz
     }
   }
 
-  GenotypesDataFrame <- data.frame(Genotype=factor(),
-                                   Chromosome=double(),
-                                   BinNumber=double(),
-                                   BinStartPos=double(),
-                                   BinEndPos=double(),
-                                   ProportionIBS=double(),
-                                   stringsAsFactors=FALSE)
-
   # Heterozygosity Lookup table!
 
   HetTable <- readr::read_csv(file="A, C, G, T, R, Y, S, W, K, M, N, +, -, 0
